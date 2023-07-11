@@ -1,33 +1,40 @@
 abstract class vehicle {
-    abstract public String start();
-    abstract public String stop();
-
+    abstract void start();
+    abstract void stop();
 }
-class Car extends vehicle{
-    public String start(){
+class Car extends  vehicle{
 
-        return "Car started";
+    @Override
+    void start() {
+        System.out.println("Car started");
     }
-    public String stop(){
-        return "Car stopped";
-    }
-}
-class Motorcycle extends vehicle{
-    public String start(){
-        return "Motorcycle Started";
-    }
-    public String stop(){
-        return "Motorcycle stopped";
+
+    @Override
+    void stop() {
+        System.out.println("car stopped");
     }
 }
+class MotorCycle extends vehicle
+{
 
+    @Override
+    void start() {
+        System.out.println("Motorcycle started");
+    }
+
+    @Override
+    void stop() {
+        System.out.println("Motorcycle started");
+    }
+}
 class VehicalClassifier{
     public static void main(String[] args) {
-        Car car = new Car();
-        Motorcycle motorcycle = new Motorcycle();
-        System.out.println(car.start());
-        System.out.println(car.stop());
-        System.out.println(motorcycle.start());
-        System.out.println(motorcycle.stop());
+        MotorCycle motorCycle=new MotorCycle();
+        motorCycle.start();
+        motorCycle.stop();
+        Car car=new Car();
+        car.start();
+        car.stop();
+
     }
 }
